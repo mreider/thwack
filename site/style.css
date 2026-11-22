@@ -1,0 +1,211 @@
+/* Thwack — white, black, PT Sans; Gabriela as the uppercase serif accent.
+   Typography and palette follow tpmm.ge: whitespace over borders, bold
+   headings, black links without underlines, purple selection. */
+
+::selection { color: #fff; background: #6950a3; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: #fff;
+  /* The brand's quiet polka dots: a faint grid behind everything. */
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.055) 1px, transparent 1.3px);
+  background-size: 22px 22px;
+  color: #000;
+  font: 400 14px/1.6 'PT Sans', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  padding: 0 16px env(safe-area-inset-bottom, 0);
+}
+h1, h2, h3 { font-family: 'PT Sans', sans-serif; font-weight: 700; margin: 0; }
+cite { font-style: italic; }
+a { color: #000; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; }
+[hidden] { display: none !important; }
+
+/* Header */
+header.site {
+  max-width: 980px; margin: 0 auto; padding: 26px 0 22px;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+}
+.wordmark {
+  font-family: 'Gabriela', serif; font-size: 20px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.wordmark:hover { text-decoration: none; }
+.wordmark img { height: 26px; width: 26px; vertical-align: -6px; margin-right: 9px; }
+nav { display: flex; align-items: center; gap: 16px; }
+.nav-icon { display: inline-flex; padding: 0; border: 0; background: none; cursor: pointer; opacity: 0.85; }
+.nav-icon:hover { opacity: 1; }
+.nav-icon img { width: 20px; height: 20px; display: block; }
+header.site nav { display: flex; gap: 22px; align-items: baseline; flex-wrap: wrap; }
+header.site nav a, .linklike {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #000;
+}
+.linklike { background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; }
+.linklike:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+main { max-width: 980px; margin: 0 auto; padding-bottom: 72px; }
+
+/* Assigned avatars: animal emoji in a pastel circle */
+.avatar {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  font-size: 13px; line-height: 1; vertical-align: -5px; flex: none;
+}
+.avatar-lg { width: 64px; height: 64px; font-size: 34px; vertical-align: middle; }
+.chip { display: inline-flex; align-items: center; gap: 7px; }
+.portfolio-head { display: flex; gap: 22px; align-items: center; }
+.portfolio-head h1 { margin-bottom: 2px; }
+.head-actions { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; margin-top: 10px; }
+form.inline { display: inline; }
+.drafts a, .drafts strong { padding: 0 2px; }
+.center { text-align: center; }
+.page-head { padding: 44px 0 10px; }
+.page-head h1 { font-size: 40px; }
+.muted { color: #767676; font-size: 13px; }
+.warn { color: #8a5a00; font-size: 12.5px; }
+.empty { color: #767676; font-style: italic; margin: 6px 0; }
+
+/* Dashboard layout */
+.columns { display: flex; gap: 48px; align-items: flex-start; }
+.col-main { flex: 2 1 480px; min-width: 0; }
+.col-side { flex: 1 1 240px; min-width: 0; }
+@media (max-width: 760px) { .columns { flex-direction: column; } .col-side, .col-main { width: 100%; flex: none; } }
+
+.columns.dash { padding-top: 26px; }
+section.panel { padding: 30px 0 14px; }
+.section-action { margin: 14px 0 0; }
+.panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+section.panel h2 {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+/* Row lists */
+ul.rows { list-style: none; margin: 0; padding: 0; }
+ul.rows li {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 9px 0; border-top: 1px dotted #c9c9c9; flex-wrap: wrap;
+}
+ul.rows li:first-child { border-top: 0; }
+.row-actions { display: flex; gap: 10px; align-items: baseline; }
+ul.feed li { display: block; }
+ul.feed li .muted { margin-left: 8px; }
+
+/* Buttons & forms */
+button, .button {
+  font-family: 'PT Sans', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: #fff; color: #000; border: 1px solid #000; border-radius: 0;
+  padding: 9px 20px; cursor: pointer; text-decoration: none; display: inline-block;
+}
+button:hover, .button:hover { background: #000; color: #fff; text-decoration: none; }
+button.small { padding: 3px 12px; font-size: 11px; border-color: #c9c9c9; color: #767676; }
+button.small:hover { border-color: #000; color: #fff; background: #000; }
+button.danger { border-color: #8a5a00; color: #8a5a00; }
+button.danger:hover { background: #8a5a00; color: #fff; }
+textarea {
+  width: 100%; font: 400 15px/1.6 'PT Sans', sans-serif; color: #000;
+  background: #fff; border: 1px solid #c9c9c9; padding: 12px; resize: vertical;
+}
+textarea:focus { outline: none; border-color: #000; }
+.stack { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin: 10px 0; }
+.stack button { align-self: flex-end; }
+.gate-msg { border: 1px solid #8a5a00; color: #8a5a00; padding: 10px 14px; font-size: 13.5px; }
+
+/* Landing */
+.landing { max-width: 640px; margin: 0 auto; padding: 110px 0 40px; text-align: center; }
+.landing .emblem { width: 56px; height: 56px; margin-bottom: 20px; }
+.landing h1 {
+  font-family: 'Gabriela', serif; font-weight: 400; font-size: 56px;
+  text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 14px;
+}
+.lede { font-size: 16px; color: #767676; margin: 0 auto 32px; }
+ol.steps {
+  list-style: none; display: flex; gap: 32px; text-align: center;
+  margin: 40px 0 0; padding: 34px 0 0; border-top: 1px dotted #c9c9c9;
+}
+ol.steps li { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 13px; color: #555; min-width: 0; }
+ol.steps strong { font-size: 14px; color: #000; }
+.step-icon { width: 52px; height: 52px; margin-bottom: 2px; }
+.landing-cta { margin: 40px 0 0; }
+.demo-link { margin: 14px 0 0; font-size: 13px; }
+.demo-link a { color: #767676; }
+.demo-link a:hover { color: #000; }
+@media (max-width: 620px) { ol.steps { flex-direction: column; gap: 22px; } }
+
+/* Reading page */
+article.work, article.thread { max-width: 680px; margin: 0 auto; }
+/* Long-form text sits on solid white so the dots never compete with it. */
+.prose, .legal { background: #fff; box-shadow: 0 0 0 18px #fff; }
+.work-head { padding: 48px 0 10px; margin-bottom: 30px; }
+.work-head h1 { font-size: 36px; margin: 0 0 8px; }
+.prose { font-size: 16px; line-height: 1.7; }
+.prose p { margin: 0 0 1em; }
+.prose blockquote { margin: 1em 0; padding-left: 1.2em; border-left: 2px solid #c9c9c9; color: #555; }
+.doc-link { margin: 30px 0 0; }
+.doc-link a { color: #767676; }
+article.work ~ section.panel { max-width: 680px; margin: 40px auto 0; }
+.assigned-note { font-size: 13.5px; color: #555; border: 1px solid #e9e9e9; padding: 10px 14px; }
+.share-hint { max-width: 680px; margin: 28px auto 0; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+
+/* Bare reading page (shared link, signed out): just the writing. */
+body.bare .work-head { padding-top: 64px; }
+.review-invite { max-width: 680px; margin: 64px auto 72px; padding-top: 30px; border-top: 1px dotted #c9c9c9; }
+
+/* Review thread */
+article.thread { margin-top: 0; }
+ol.messages { list-style: none; margin: 0 0 24px; padding: 0; }
+ol.messages li { padding: 15px 0; border-top: 1px dotted #c9c9c9; }
+ol.messages li:first-child { border-top: 0; }
+.msg-meta { margin: 0 0 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #767676; }
+li.mine .msg-meta::after { content: " — you"; }
+.msg-body { margin: 0; white-space: pre-wrap; font-size: 15px; }
+
+/* Legal pages + fine print */
+.legal { max-width: 620px; margin: 0 auto; padding-top: 44px; font-size: 15px; line-height: 1.7; }
+.legal h1 { font-size: 36px; margin-bottom: 14px; }
+.legal h2 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin: 28px 0 8px; }
+.legal code { font-size: 13px; }
+.fineprint { margin-top: 34px; font-size: 12px; color: #767676; }
+.fineprint a { color: #767676; }
+.site-foot {
+  max-width: 920px; margin: 72px auto 30px; padding: 22px 24px 0;
+  border-top: 1px dotted #c9c9c9; text-align: center;
+  font-size: 12px; color: #767676;
+}
+.site-foot a { color: #767676; }
+.guide-hint { font-size: 12px; margin-left: 14px; color: #767676; }
+.site-foot a:hover { color: #000; }
+
+/* Dialogs (confirm + sign-in) */
+details.toc {
+  margin: 26px 0 6px; font-size: 14px;
+  border-top: 1px dotted #c9c9c9; border-bottom: 1px dotted #c9c9c9;
+  padding: 12px 0;
+}
+details.toc summary {
+  cursor: pointer; font-weight: 700; text-transform: uppercase;
+  font-size: 12px; letter-spacing: 0.06em; color: #767676;
+}
+details.toc ol { list-style: none; margin: 10px 0 2px; padding: 0; }
+details.toc li { padding: 3px 0; }
+details.toc li.toc-l1 { padding-left: 18px; }
+details.toc li.toc-l2 { padding-left: 36px; }
+#comment-pill {
+  position: fixed; right: 18px; bottom: 18px; z-index: 5;
+  background: #000; color: #fff; padding: 10px 18px; border-radius: 999px;
+  font-size: 13px; text-decoration: none; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+}
+#comment-pill:hover { text-decoration: none; background: #333; }
+html { scroll-behavior: smooth; }
+.prose h1[id], .prose h2[id], .prose h3[id] { scroll-margin-top: 16px; }
+
+dialog {
+  border: 1px solid #000; background: #fff; color: #000;
+  padding: 26px 28px; max-width: 420px; width: calc(100vw - 48px);
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }

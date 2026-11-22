@@ -1,0 +1,3 @@
+# Local development only. Copy to .dev.vars (gitignored).
+# Enables /auth/dev?u=<name> fake sign-in and /dev/seed. NEVER set in production.
+DEV_FAKE_AUTH=1

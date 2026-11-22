@@ -1,0 +1,31 @@
+name = "thwack"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+workers_dev = true          # keep *.workers.dev for testing alongside the custom domain
+account_id = "006034a9f9712a60aee4665a51d20d28"
+
+# Custom domain (zone thwack.app — Porkbun NS pointed at Cloudflare).
+routes = [
+  { pattern = "thwack.app", custom_domain = true },
+  { pattern = "www.thwack.app", custom_domain = true },
+]
+
+# Hourly: expire stale review assignments, then assign new ones.
+[triggers]
+crons = ["7 * * * *"]
+
+[assets]
+directory = "../site"
+binding = "ASSETS"
+
+# Rendered public pages (portfolios, work drafts) — served from KV so reads
+# stay at the edge, in memory; purged on every mutation that affects them.
+[[kv_namespaces]]
+binding = "CACHE"
+id = "bd3728b82be041d6bbb37fbd3ae13a4e"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "thwack"
+database_id = "43d24861-3c20-4dc9-aaee-87ad764c331f"
+migrations_dir = "../migrations"
