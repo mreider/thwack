@@ -43,35 +43,35 @@ app.get('/', (c) => {
 app.get('/privacy', (c) => c.html(page('Privacy', c.get('user'), `
 <article class="legal">
   <h1>Privacy</h1>
-  <p>Thwack is a small service for sharing writing and trading private comments. This page says what it keeps and why, in plain words.</p>
-  <h2>What Thwack stores</h2>
-  <p>When you sign in with Google, Thwack stores your Google account id, name, and email address — only to recognize you when you return. <strong>They are never shown to anyone.</strong> Publicly you exist only as an assigned pen name and avatar.</p>
-  <p>Thwack also stores: the pen name and avatar it assigned you; rendered copies ("drafts") of the Google Docs you explicitly connect; the comments and replies you write; and who you follow or block.</p>
+  <p>Thwack stores as little as possible. This page lists what it keeps and why.</p>
+  <h2>Account data</h2>
+  <p>Signing in with Google stores your Google account id, name, and email address. These identify you when you return. They are never shown to anyone. Everyone else sees an assigned pen name and avatar.</p>
+  <p>Thwack also stores the pen name and avatar, rendered drafts of connected docs, comments and replies, and follow and block lists.</p>
   <h2>Google Drive access</h2>
-  <p>Thwack uses Google's narrowest Drive permission (<code>drive.file</code>): it can only see documents you personally pick in the file picker — it cannot browse your Drive. For a picked doc it checks the sharing setting and fetches the public export to display. You can revoke this at any time at <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">myaccount.google.com/permissions</a>.</p>
-  <h2>What's public and what's private</h2>
-  <p>Your portfolio and the works on it are visible to anyone with the link. Comment conversations are private between the author and one reader. Your real name and email appear nowhere.</p>
-  <h2>Cookies and tracking</h2>
-  <p>One session cookie keeps you signed in. There are no ads, no analytics, no trackers, and nothing is sold or shared with anyone.</p>
+  <p>Thwack uses the narrowest Drive permission (<code>drive.file</code>). It sees only documents picked in the file picker and cannot browse Drive. For a picked doc it checks the sharing setting and fetches the public export. Revoke access at any time at <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">myaccount.google.com/permissions</a>.</p>
+  <h2>Public and private</h2>
+  <p>Portfolios and works are visible to anyone with the link. Comment conversations are private between the author and one reader. Real names and email addresses appear nowhere.</p>
+  <h2>Cookies</h2>
+  <p>One session cookie keeps you signed in. There are no ads, analytics, or trackers. Nothing is sold or shared.</p>
   <h2>Caching</h2>
-  <p>Public pages are cached on Cloudflare's edge so they load fast; caches are cleared when the underlying content changes.</p>
+  <p>Public pages are cached on Cloudflare's edge. Caches are cleared when content changes.</p>
   <h2>Removing things</h2>
-  <p>You can remove a work at any time — its stored drafts stop being served. To delete your account and everything with it, write to <strong>hello@thwack.app</strong>.</p>
-  <p class="muted">This page may change as Thwack does; material changes will be visible here.</p>
+  <p>Remove a work at any time and its stored drafts stop being served. To delete an account and everything with it, write to <strong>hello@thwack.app</strong>.</p>
+  <p class="muted">Material changes to this page will be visible here.</p>
   <p class="fineprint"><a href="/">Home</a> · <a href="/terms">Terms</a></p>
 </article>`)));
 
 app.get('/terms', (c) => c.html(page('Terms', c.get('user'), `
 <article class="legal">
   <h1>Terms</h1>
-  <p>Short version: be decent, share only what's yours to share, and don't unmask anyone.</p>
-  <h2>Your writing stays yours</h2>
-  <p>Connecting a Google Doc gives Thwack permission to store and display rendered copies of it to readers, which is the whole point of the service. All rights remain yours; remove a work whenever you like.</p>
-  <h2>House rules</h2>
-  <p>Only connect documents you have the right to share. No unlawful content, spam, or harassment — comments are for honest, civil feedback on the writing. Writers here go by pen names: do not attempt to reveal who is behind one. Blocks are permanent by design.</p>
+  <p>Be decent, share only what you have the right to share, and don't unmask anyone. Details below.</p>
+  <h2>Your writing</h2>
+  <p>Connecting a doc lets Thwack store and display rendered copies to readers. All rights stay with the writer. Remove a work at any time.</p>
+  <h2>Rules</h2>
+  <p>Only connect documents you have the right to share. No unlawful content, spam, or harassment. Comments are for honest, civil feedback on the writing. Writers go by pen names - don't try to reveal who is behind one. Blocks are permanent.</p>
   <p>Accounts or content that break these rules can be removed.</p>
   <h2>The service</h2>
-  <p>Thwack is provided as-is, free, with no warranty of any kind. It may change, pause, or shut down — but your writing lives in your own Google Docs either way, which is the safest place for it. You must be at least 13 to use it.</p>
+  <p>Thwack is free and provided as-is, with no warranty. It may change, pause, or shut down. Your writing lives in your own Google Docs either way. You must be at least 13 to use it.</p>
   <p class="fineprint"><a href="/">Home</a> · <a href="/privacy">Privacy</a></p>
 </article>`)));
 

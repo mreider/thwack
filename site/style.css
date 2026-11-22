@@ -172,11 +172,12 @@ li.mine .msg-meta::after { content: " — you"; }
 .fineprint { margin-top: 34px; font-size: 12px; color: #767676; }
 .fineprint a { color: #767676; }
 .site-foot {
-  max-width: 920px; margin: 72px auto 30px; padding: 22px 24px 0;
+  max-width: 920px; margin: 72px auto 34px; padding: 24px 24px 0;
   border-top: 1px dotted #c9c9c9; text-align: center;
-  font-size: 12px; color: #767676;
+  font-size: 13px; color: #9a9a9a; letter-spacing: 0.01em;
 }
-.site-foot a { color: #767676; }
+.site-foot a { color: #333; font-weight: 700; padding: 0 4px; }
+.site-foot a:hover { color: #000; }
 .guide-hint { font-size: 12px; margin-left: 14px; color: #767676; }
 .site-foot a:hover { color: #000; }
 
