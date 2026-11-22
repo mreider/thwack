@@ -78,19 +78,18 @@ app.get('/terms', (c) => c.html(page('Terms', c.get('user'), `
 app.get('/guide', (c) => c.html(page('Guide', c.get('user'), `
 <article class="legal">
   <h1>Guide</h1>
-  <p>Thwack renders Google Docs. Writers write in Google Docs and readers read on Thwack.</p>
+  <p>Thwack renders Google Docs. Writers write in Google Docs and readers read on Thwack. Headings, bold, italics, lists, quotes, and images carry over.</p>
   <h2>Sharing a doc</h2>
-  <p>Docs must be shared as <strong>Anyone with the link</strong> with the role <strong>Viewer</strong>. Links that allow commenting or editing are rejected. This keeps strangers out of the doc itself.</p>
-  <p>In Google Docs we choose <strong>Share</strong>, then <strong>General access</strong>, then <strong>Anyone with the link</strong>, then <strong>Viewer</strong>.</p>
+  <p>In Google Docs choose <strong>Share</strong>, then <strong>General access</strong>, then <strong>Anyone with the link</strong>, then <strong>Viewer</strong>. Links that allow commenting or editing are rejected. This keeps strangers out of the doc.</p>
   <h2>Titles</h2>
   <p>The document's file name in Google Drive becomes the title. A doc that starts with a single Heading&nbsp;1 is treated the same way - the heading is a title, not a chapter.</p>
   <h2>Chapters</h2>
-  <p>Use real heading styles - <strong>Heading 1</strong>, <strong>2</strong>, or <strong>3</strong> - for chapters and sections. Bold text doesn't count. A piece with two or more headings gets a <strong>Contents</strong> list at the top. Each entry jumps to its section.</p>
-  <p>Long pieces stay on one page. Readers scroll, and a floating <strong>Comments</strong> button keeps the comment box one tap away. <a href="/work/demoworkfou0">Two Cinquains</a> on the example portfolio shows a contents list built from two headings.</p>
+  <p>Use real heading styles - <strong>Heading 1</strong>, <strong>2</strong>, or <strong>3</strong> - for chapters and sections. Bold text doesn't count. A piece with two or more headings gets a <strong>Contents</strong> list at the top, and each entry jumps to its section. <a href="/work/demoworkfou0">Two Cinquains</a> on the example portfolio shows one.</p>
+  <p>Long pieces stay on one page. Readers scroll. A floating <strong>Comments</strong> button jumps to the comment box.</p>
   <h2>Drafts</h2>
-  <p>Edits to a doc don't appear until the writer clicks <strong>Refresh</strong> on the work. If the text changed, it becomes the next numbered draft. Comments stay attached to the draft they were written on.</p>
+  <p>Click <strong>Refresh</strong> on a work to pull in edits from the doc. If the text changed, Thwack stores it as the next numbered draft. Comments stay attached to the draft they were written on.</p>
   <h2>Pen names</h2>
-  <p>Readers see a pen name, never a real name. The link to the Google Doc is shown to its owner only, since a doc link reveals the Google account behind it. Headings, bold, italics, lists, quotes, and images carry over.</p>
+  <p>Readers see a pen name, never a real name. The link to the Google Doc appears for its owner only, since a doc link reveals the Google account behind it.</p>
   <p class="fineprint"><a href="/">Home</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
 </article>`)));
 
