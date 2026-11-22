@@ -77,18 +77,20 @@ app.get('/terms', (c) => c.html(page('Terms', c.get('user'), `
 
 app.get('/guide', (c) => c.html(page('Guide', c.get('user'), `
 <article class="legal">
-  <h1>How your doc becomes a page</h1>
-  <p>Thwack renders your Google Doc for readers. You keep writing where you already write; Thwack handles the rest. A few conventions make the page come out right.</p>
-  <h2>The title</h2>
-  <p>The document's <strong>file name in Google Drive</strong> is the title readers see. If you also put a single Heading&nbsp;1 at the top of the doc, Thwack treats it as the title too and keeps it out of the contents list.</p>
-  <h2>Chapters and sections</h2>
-  <p>Use Google Docs' real heading styles — <strong>Heading&nbsp;1, 2 or 3</strong>, not just bold text — for your chapters and sections. A piece with two or more headings automatically gets a <strong>Contents</strong> list at the top, with each entry jumping straight to its section. Long stories stay one continuous page: readers scroll, the contents list navigates, and a floating button keeps the comment box one tap away.</p>
+  <h1>Guide</h1>
+  <p>Thwack renders Google Docs. Writers write in Google Docs and readers read on Thwack.</p>
+  <h2>Sharing a doc</h2>
+  <p>Docs must be shared as <strong>Anyone with the link</strong> with the role <strong>Viewer</strong>. Links that allow commenting or editing are rejected. This keeps strangers out of the doc itself.</p>
+  <p>In Google Docs we choose <strong>Share</strong>, then <strong>General access</strong>, then <strong>Anyone with the link</strong>, then <strong>Viewer</strong>.</p>
+  <h2>Titles</h2>
+  <p>The document's file name in Google Drive becomes the title. A doc that starts with a single Heading&nbsp;1 is treated the same way - the heading is a title, not a chapter.</p>
+  <h2>Chapters</h2>
+  <p>Use real heading styles - <strong>Heading 1</strong>, <strong>2</strong>, or <strong>3</strong> - for chapters and sections. Bold text doesn't count. A piece with two or more headings gets a <strong>Contents</strong> list at the top. Each entry jumps to its section.</p>
+  <p>Long pieces stay on one page. Readers scroll, and a floating <strong>Comments</strong> button keeps the comment box one tap away. <a href="/work/demoworkfou0">Two Cinquains</a> on the example portfolio shows a contents list built from two headings.</p>
   <h2>Drafts</h2>
-  <p>Edits in your doc don't appear on Thwack until you press <strong>Refresh</strong> on the work. A real change becomes the next numbered draft; comments stay pinned to the draft they were written on, so nothing a reader said gets orphaned by your revisions.</p>
-  <h2>Sharing settings</h2>
-  <p>The doc must be shared as <strong>Anyone with the link → Viewer</strong>. Viewer exactly — if the link allows commenting or editing, Thwack refuses it to protect your document from strangers. In Google Docs: Share → General access → Anyone with the link → Viewer.</p>
-  <h2>What readers see</h2>
-  <p>Your pen name, never your name. The link to the underlying Google Doc is shown only to you — a doc link would reveal its owner, so it never appears for anyone else. Formatting carries over: headings, bold, italics, lists, block quotes and images.</p>
+  <p>Edits to a doc don't appear until the writer clicks <strong>Refresh</strong> on the work. If the text changed, it becomes the next numbered draft. Comments stay attached to the draft they were written on.</p>
+  <h2>Pen names</h2>
+  <p>Readers see a pen name, never a real name. The link to the Google Doc is shown to its owner only, since a doc link reveals the Google account behind it. Headings, bold, italics, lists, quotes, and images carry over.</p>
   <p class="fineprint"><a href="/">Home</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
 </article>`)));
 
