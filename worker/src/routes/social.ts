@@ -88,7 +88,7 @@ async function renderPortfolio(c: Ctx): Promise<string | null> {
     : empty(isSelf ? 'Add a Google Doc to publish your first piece.' : 'Nothing published yet.');
   const addWork = isSelf
     ? `<p class="section-action"><button id="add-work" type="button" class="small">Add work</button>
-       <a class="muted guide-hint" href="/guide">How your doc becomes a page →</a></p>
+       <a class="muted guide-hint" href="/guide">Read the guide →</a></p>
        <p id="add-work-msg" class="gate-msg" hidden></p>`
     : '';
 
@@ -120,11 +120,11 @@ async function renderPortfolio(c: Ctx): Promise<string | null> {
       ? `<p><a href="/work/${a.work_pid}"><cite>${esc(a.title)}</cite></a></p>
          <p class="muted">Yours until ${fmtDate(a.expires_at)} — read it and leave the writer a comment.</p>
          ${confirmForm(`/assignments/${a.id}/decline`, 'Decline', 'Decline this assignment? It will be offered to another reader.')}`
-      : empty('Nothing assigned. When a piece needs a reader, it lands here.');
+      : empty('Nothing is assigned right now. When a piece needs a reader, it will appear here.');
     const reviewsOnMine = reviewsOnMineQ.results?.length
       ? `<ul class="rows">${reviewsOnMineQ.results.map((r: any) =>
           `<li><a href="/review/${r.id}">${esc(r.handle || 'A reader')} on <cite>${esc(r.title)}</cite> (draft ${r.num})</a><span class="muted">${timeAgo(r.last_msg_at)}</span></li>`).join('')}</ul>`
-      : empty('None yet. Share a piece’s link to invite notes.');
+      : empty('None yet. Share a piece’s link to get comments.');
     const reviewsGiven = reviewsGivenQ.results?.length
       ? `<ul class="rows">${reviewsGivenQ.results.map((r: any) =>
           `<li><a href="/review/${r.id}"><cite>${esc(r.title)}</cite> (draft ${r.num})</a><span class="muted">${timeAgo(r.last_msg_at)}</span></li>`).join('')}</ul>`
@@ -147,7 +147,7 @@ async function renderPortfolio(c: Ctx): Promise<string | null> {
         <li>${writerChip(u)}
           <span class="row-actions">${confirmForm(`/unfollow/${u.pid}`, 'Unfollow', `Stop following ${u.handle}?`)}</span>
         </li>`).join('')}</ul>`
-    : chipList(followingQ.results, isSelf ? 'No one yet — follow writers from their pages.' : 'No one yet.');
+    : chipList(followingQ.results, isSelf ? 'No one yet. You can follow writers from their pages.' : 'No one yet.');
 
   return page(target.handle || 'A writer', viewer, `
 <header class="page-head portfolio-head">
@@ -155,7 +155,7 @@ async function renderPortfolio(c: Ctx): Promise<string | null> {
   <div>
     <h1>${esc(target.handle || 'A writer')}</h1>
     <p class="muted">${isSelf ? 'Your page, as readers see it · ' : ''}writing here since ${fmtDate(target.created_at)}</p>
-    ${target.is_demo ? '<p class="muted">An example page — the writing is public-domain, the writers are made up, but every link works like the real thing.</p>' : ''}
+    ${target.is_demo ? '<p class="muted">This page is an example. The writing is in the public domain and the writers are made up, but every link works like the real thing.</p>' : ''}
     ${control}
   </div>
 </header>

@@ -2,19 +2,20 @@
 
 Anonymous writing portfolios with private comments. Live at [thwack.app](https://thwack.app).
 
-Writers connect a Google Doc; Thwack renders it under an assigned pen name.
-Readers open a shared link, read, and leave comments that only the writer
-sees — conversations, not drive-bys. Pressing Refresh on a work captures the
-doc as the next numbered draft; comments stay pinned to the draft they were
-written on. An hourly job offers each active reader one piece that needs
-attention, favoring neglected writers over popular ones. There's an example
-portfolio at [/u/demowriter0q](https://thwack.app/u/demowriter0q).
+Writers connect a Google Doc and Thwack renders it under an assigned pen
+name. Readers open a shared link, read, and leave comments that only the
+writer sees. Each comment starts a private conversation between the two.
+Pressing Refresh on a work captures the doc as the next numbered draft, and
+comments stay with the draft they were written on. An hourly job offers each
+active reader one piece that needs attention, favoring neglected writers
+over popular ones. There's an example portfolio at
+[/u/demowriter0q](https://thwack.app/u/demowriter0q).
 
 ## Stack
 
 One Cloudflare Worker (Hono, TypeScript, server-rendered HTML), D1 for data,
-KV as the public page cache, Google OAuth + Picker (`drive.file` — the app
-only ever sees docs you pick). Deploys from GitHub Actions on push to main.
+KV as the public page cache, Google OAuth + Picker (`drive.file`, so the app
+only sees docs you pick). Deploys from GitHub Actions on push to main.
 
 ## Develop
 

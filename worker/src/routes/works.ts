@@ -89,7 +89,7 @@ works.post('/works', async (c) => {
   if (existing) return c.json({ ok: true, work: existing.pid });
 
   const exp = await fetchExportHtml(fileId);
-  if (!exp.ok) return c.json({ ok: false, reason: 'The document’s public link did not open for an anonymous reader yet. Google sometimes takes a minute to apply sharing — check again shortly.' }, 400);
+  if (!exp.ok) return c.json({ ok: false, reason: 'The document’s public link did not open for an anonymous reader yet. Google sometimes takes a minute to apply sharing, so check again shortly.' }, 400);
   const snapshot = await snapshotOf(exp);
 
   const t = now();
@@ -235,7 +235,7 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
        <form class="inline" method="post" action="/works/${w.pid}/refresh"><button type="submit" class="small">Refresh draft</button></form>
        <button type="button" class="small" data-copy-link="/work/${w.pid}">Copy link</button>
        <span class="muted">· ${shown.views} read${shown.views === 1 ? '' : 's'} of this draft</span></p>
-      ${!w.available ? '<p class="warn">The doc is no longer publicly readable; readers still see this stored draft. Restore link sharing, then refresh.</p>' : ''}
+      ${!w.available ? '<p class="warn">The doc’s public link is off, so readers see this stored draft instead. Turn link sharing back on in Google Docs, then click Refresh.</p>' : ''}
       ${refreshNote(c.req.query('refresh'))}`
     : '';
 
@@ -251,7 +251,7 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
     const inner = demoThreads?.length
       ? `<ul class="rows">${demoThreads.map((t) =>
           `<li><a href="/review/${t.id}">The conversation with ${esc(t.handle || 'a reader')} →</a></li>`).join('')}</ul>
-         <p class="muted">Comments are normally private between the author and one reader — these are open because this is an example page.</p>`
+         <p class="muted">Comments are normally private between the author and one reader. These are open because this is an example page.</p>`
       : `<p class="muted">On a real piece, readers would see a private comment box here.</p>`;
     const demoArea = section('Example comments on this draft', inner);
     return c.html(page(w.title, user, `<article class="work">${head}${contents}${bodyHtml}</article><div id="comments"></div>${demoArea}`, { bare: !user }));
@@ -269,7 +269,7 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
   </form>
 </section>
 <dialog id="signin">
-  <p>To send this privately, sign in with Google. Your note is kept and sent right after. You appear under an assigned pen name, never your own.</p>
+  <p>To send this privately, sign in with Google. Your note is kept and sent right after, under your assigned pen name.</p>
   <div class="dialog-actions">
     <button type="button" id="signin-cancel">Not now</button>
     <a class="button" href="/auth/login?next=/work/${w.pid}">Continue with Google</a>
@@ -299,7 +299,7 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
         "SELECT id FROM assignments WHERE work_id = ? AND reviewer_id = ? AND status = 'pending'"
       ).bind(w.id, user.id).first<{ id: number }>();
       const assignedNote = assignment
-        ? `<p class="assigned-note">This piece was assigned to you. Read it, then leave the writer your thoughts — only the two of you will see them.</p>`
+        ? `<p class="assigned-note">This piece was assigned to you. Read it, then leave the writer your thoughts. Only the two of you will see them.</p>`
         : '';
       const declineBtn = assignment
         ? confirmForm(`/assignments/${assignment.id}/decline`, 'Decline this assignment', 'Decline this assignment? It will be offered to another reader.')
@@ -308,7 +308,7 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
         `${assignedNote}
          <form method="post" action="/works/${w.pid}/review" class="stack">
            <textarea name="body" required minlength="3" maxlength="20000" rows="6"
-             placeholder="Your comment — honest, specific, kind. Only the writer will see it."></textarea>
+             placeholder="Only the writer will see this comment."></textarea>
            <button type="submit">Send privately</button>
          </form>
          ${declineBtn}`);
@@ -321,9 +321,9 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
 }
 
 function refreshNote(q: string | undefined): string {
-  if (q === 'same') return '<p class="muted">Checked the doc — no changes since this draft.</p>';
-  if (q === 'new') return '<p class="muted">New draft captured.</p>';
-  if (q === 'gone') return '<p class="warn">Could not read the doc — its public link seems to be off.</p>';
+  if (q === 'same') return '<p class="muted">The doc hasn’t changed since this draft.</p>';
+  if (q === 'new') return '<p class="muted">Saved a new draft.</p>';
+  if (q === 'gone') return '<p class="warn">Could not read the doc. Its public link seems to be off.</p>';
   return '';
 }
 

@@ -45,7 +45,7 @@ reviews.get('/review/:id', async (c) => {
   const draftUrl = `/work/${t.work_pid}/v/${t.num}`;
   const privacyLine = participant
     ? 'No one else can see it.'
-    : 'Normally no one else could read this — it is open because it is an example.';
+    : 'Normally no one else could read this conversation. It is open because it is an example.';
   const replyForm = participant
     ? `<form method="post" action="/review/${t.id}/reply" class="stack">
     <textarea name="body" required minlength="1" maxlength="20000" rows="4"
