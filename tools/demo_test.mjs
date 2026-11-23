@@ -49,7 +49,7 @@ test('pen names use the real identity vocabulary', () => {
 });
 
 test('landing page links to a seeded demo portfolio', () => {
-  const m = indexTs.match(/href="\/u\/([a-z0-9]{12})">Or see how it works/);
+  const m = indexTs.match(/href="\/u\/([a-z0-9]{12})">See how it works/);
   assert.ok(m, 'landing demo link missing');
   assert.ok(userRows.some((u) => u.pid === m[1]), `landing links to unseeded pid ${m[1]}`);
 });
