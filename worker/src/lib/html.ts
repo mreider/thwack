@@ -73,7 +73,7 @@ ${body}
 <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Gabriela&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body${opts.noHeader ? ' class="home"' : ''}>
 ${opts.noHeader ? '' : `<header class="site">
   <a class="wordmark" href="/"><img src="/icon.png?v=5" alt="">Thwack</a>
   ${nav}
