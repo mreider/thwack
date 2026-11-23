@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { now, type Env, type Vars } from '../env';
 import { sameOrigin } from '../lib/session';
-import { page, esc, timeAgo } from '../lib/html';
+import { page, esc, timeAgo, backlink } from '../lib/html';
 
 export const reviews = new Hono<{ Bindings: Env; Variables: Vars }>();
 
@@ -56,6 +56,7 @@ reviews.get('/review/:id', async (c) => {
   return c.html(page(`Comments · ${t.title}`, user, `
 <article class="thread">
   <header class="work-head">
+    ${backlink(draftUrl, `Back to “${t.title}”, draft ${t.num}`)}
     <h1>Comments on <a href="${draftUrl}"><cite>${esc(t.title)}</cite></a></h1>
     <p class="muted">On <a href="${draftUrl}">draft ${t.num}</a> · a private conversation between
       ${esc(t.writer_handle || 'the writer')} (author) and ${esc(t.reviewer_handle || 'a reader')} (reader).

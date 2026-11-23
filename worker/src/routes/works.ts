@@ -7,7 +7,7 @@ import { accessTokenFor, fileMeta, fetchExportHtml, MAX_SNAPSHOT_CHARS } from '.
 import { checkDocGate } from '../lib/pure/docgate.mjs';
 import { sanitizeExport } from '../lib/sanitize';
 import { sameOrigin } from '../lib/session';
-import { page, esc, section, empty, timeAgo, fmtDate, writerChip, confirmForm } from '../lib/html';
+import { page, esc, section, empty, timeAgo, fmtDate, writerChip, confirmForm, backlink } from '../lib/html';
 import { assignNextFor } from '../lib/assigner';
 import { servePublicCached, purgeWork, purge, keyUser, keyWork } from '../lib/cache';
 
@@ -214,6 +214,7 @@ async function renderWork(c: Ctx, workPid: string, wantNum: number | null): Prom
     : '';
   const head = `
   <header class="work-head">
+    ${backlink(`/u/${w.author_pid}`, isAuthor ? 'Back to your page' : `More by ${w.handle || 'this writer'}`)}
     <h1>${esc(w.title)}</h1>
     <p class="muted byline">by ${writerChip({ pid: w.author_pid, handle: w.handle, hue: w.hue, animal: w.animal })} · Draft ${shown.num} · ${fmtDate(shown.created_at)} ${switcher}</p>
     ${isLatest ? '' : `<p class="muted">You are reading an older draft. <a href="/work/${w.pid}">Read the latest →</a></p>`}

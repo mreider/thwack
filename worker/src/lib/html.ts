@@ -104,6 +104,11 @@ export function confirmForm(action: string, label: string, message: string, dang
   </form>`;
 }
 
+/** Breadcrumb-style back link shown at the top of a page. */
+export function backlink(href: string, label: string): string {
+  return `<p class="backlink"><a href="${esc(href)}">← ${esc(label)}</a></p>`;
+}
+
 export function section(heading: string, inner: string, extra = ''): string {
   return `<section class="panel">
   <div class="panel-head"><h2>${esc(heading)}</h2>${extra}</div>

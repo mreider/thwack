@@ -144,6 +144,9 @@ article.work, article.thread { max-width: 680px; margin: 0 auto; }
 .prose, .legal { background: #fff; box-shadow: 0 0 0 18px #fff; }
 .work-head { padding: 48px 0 10px; margin-bottom: 30px; }
 .work-head h1 { font-size: 36px; margin: 0 0 8px; }
+.backlink { margin: 0 0 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.backlink a { color: #767676; }
+.backlink a:hover { color: #000; text-decoration: none; }
 .prose { font-size: 16px; line-height: 1.7; }
 .prose p { margin: 0 0 1em; }
 .prose blockquote { margin: 1em 0; padding-left: 1.2em; border-left: 2px solid #c9c9c9; color: #555; }
