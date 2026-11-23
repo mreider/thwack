@@ -79,7 +79,7 @@ app.get('/guide', (c) => c.html(page('Guide', c.get('user'), `
 <article class="legal">
   <h1>Guide</h1>
   <p>This page explains how to connect a Google Doc to Thwack and how to format it so the published page looks right.</p>
-  <p>Thwack has no editor of its own. You write in Google Docs, connect the doc, and Thwack publishes a copy of it on your portfolio. Headings, bold, italics, lists, quotes, and images all come through.</p>
+  <p>Thwack has no editor of its own. You write in Google Docs, connect the doc, and Thwack publishes a copy of it on your portfolio. Your formatting stays intact, including headings, bold, italics, lists, quotes, and images.</p>
   <h2>Sharing a doc</h2>
   <p>A doc has to be viewable before Thwack can publish it. In Google Docs choose <strong>Share</strong>, then <strong>General access</strong>, then <strong>Anyone with the link</strong>, then <strong>Viewer</strong>. Thwack rejects links that allow commenting or editing, so strangers can't get into the doc itself.</p>
   <h2>Titles</h2>
