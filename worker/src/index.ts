@@ -58,7 +58,6 @@ app.get('/privacy', (c) => c.html(page('Privacy', c.get('user'), `
   <h2>Removing things</h2>
   <p>You can remove a work at any time, which stops its stored drafts from being served. To delete your account and everything with it, write to <strong>hello@thwack.app</strong>.</p>
   <p class="muted">Any meaningful change to this policy will appear on this page.</p>
-  <p class="fineprint"><a href="/">Home</a> · <a href="/terms">Terms</a></p>
 </article>`)));
 
 app.get('/terms', (c) => c.html(page('Terms', c.get('user'), `
@@ -72,7 +71,6 @@ app.get('/terms', (c) => c.html(page('Terms', c.get('user'), `
   <p>Accounts or content that break these rules can be removed.</p>
   <h2>The service</h2>
   <p>Thwack is free and provided as-is, with no warranty. It may change or shut down someday, and if it does your writing is safe in your own Google Docs. You must be at least 13 to use it.</p>
-  <p class="fineprint"><a href="/">Home</a> · <a href="/privacy">Privacy</a></p>
 </article>`)));
 
 app.get('/guide', (c) => c.html(page('Guide', c.get('user'), `
@@ -91,7 +89,6 @@ app.get('/guide', (c) => c.html(page('Guide', c.get('user'), `
   <p>Edits in Google Docs don't show up on Thwack right away. Click <strong>Refresh</strong> on the work and, if the text changed, Thwack saves it as the next numbered draft. Comments stay attached to the draft they were written on, so you can revise without losing the conversation.</p>
   <h2>Pen names</h2>
   <p>Readers only ever see your pen name. The link to your Google Doc is hidden from everyone but you, since a doc link points back to the Google account that owns it.</p>
-  <p class="fineprint"><a href="/">Home</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
 </article>`)));
 
 // The portfolio IS the dashboard; keep the old URL working.
