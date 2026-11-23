@@ -116,23 +116,23 @@ textarea:focus { outline: none; border-color: #000; }
 .gate-msg { border: 1px solid #8a5a00; color: #8a5a00; padding: 10px 14px; font-size: 13.5px; }
 
 /* Landing */
-.landing { max-width: 640px; margin: 0 auto; padding: 64px 0 8px; text-align: center; }
+.landing { max-width: 640px; margin: 0 auto; padding: 40px 0 8px; text-align: center; }
 body.home main { padding-bottom: 16px; }
 body.home .site-foot { margin-top: 24px; }
-.landing .emblem { width: 56px; height: 56px; margin-bottom: 20px; }
+.landing .emblem { width: 52px; height: 52px; margin-bottom: 10px; }
 .landing h1 {
-  font-family: 'Gabriela', serif; font-weight: 400; font-size: 56px;
-  text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 14px;
+  font-family: 'Gabriela', serif; font-weight: 400; font-size: 42px;
+  text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px;
 }
-.lede { font-size: 16px; color: #767676; margin: 0 auto 32px; }
+.lede { font-size: 15px; color: #767676; margin: 0 auto 22px; }
 ol.steps {
   list-style: none; display: flex; gap: 32px; text-align: center;
-  margin: 40px 0 0; padding: 34px 0 0; border-top: 1px dotted #c9c9c9;
+  margin: 24px 0 0; padding: 24px 0 0; border-top: 1px dotted #c9c9c9;
 }
 ol.steps li { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 13px; color: #555; min-width: 0; }
 ol.steps strong { font-size: 14px; color: #000; }
-.step-icon { width: 52px; height: 52px; margin-bottom: 2px; }
-.landing-cta { margin: 40px 0 0; }
+.step-icon { width: 46px; height: 46px; margin-bottom: 2px; }
+.landing-cta { margin: 28px 0 0; }
 .demo-link { margin: 14px 0 0; font-size: 13px; }
 .demo-link a { color: #767676; }
 .demo-link a:hover { color: #000; }
