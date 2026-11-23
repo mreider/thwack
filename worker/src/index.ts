@@ -36,8 +36,8 @@ app.get('/', (c) => {
       <span>They stay between you two, pinned to each draft.</span></li>
   </ol>
   <p class="landing-cta"><a class="button" href="/auth/login">Sign in with Google</a></p>
-  <p class="demo-link"><a href="/u/demowriter0q">Or see how it works →</a></p>
-</section>`));
+  <p class="demo-link"><a href="/u/demowriter0q">See how it works</a> · <a href="/guide">Read the guide</a></p>
+</section>`, { noHeader: true }));
 });
 
 app.get('/privacy', (c) => c.html(page('Privacy', c.get('user'), `

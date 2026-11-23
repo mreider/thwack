@@ -35,7 +35,7 @@ export function timeAgo(ts: number): string {
 
 /** Bare mode: no header, nav, or footer — a work page opened from a shared
  *  link should read as someone's writing, not as an app. */
-export function page(title: string, user: User | null, body: string, opts: { bare?: boolean } = {}): string {
+export function page(title: string, user: User | null, body: string, opts: { bare?: boolean; noHeader?: boolean } = {}): string {
   if (opts.bare) {
     return `<!doctype html>
 <html lang="en">
@@ -74,10 +74,10 @@ ${body}
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header class="site">
+${opts.noHeader ? '' : `<header class="site">
   <a class="wordmark" href="/"><img src="/icon.png?v=5" alt="">Thwack</a>
   ${nav}
-</header>
+</header>`}
 <main>
 ${body}
 </main>

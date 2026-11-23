@@ -116,7 +116,7 @@ textarea:focus { outline: none; border-color: #000; }
 .gate-msg { border: 1px solid #8a5a00; color: #8a5a00; padding: 10px 14px; font-size: 13.5px; }
 
 /* Landing */
-.landing { max-width: 640px; margin: 0 auto; padding: 110px 0 40px; text-align: center; }
+.landing { max-width: 640px; margin: 0 auto; padding: 84px 0 40px; text-align: center; }
 .landing .emblem { width: 56px; height: 56px; margin-bottom: 20px; }
 .landing h1 {
   font-family: 'Gabriela', serif; font-weight: 400; font-size: 56px;
