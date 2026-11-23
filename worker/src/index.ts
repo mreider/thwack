@@ -26,7 +26,7 @@ app.get('/', (c) => {
 <section class="landing">
   <img class="emblem" src="/icon.png?v=5" alt="">
   <h1>Thwack</h1>
-  <p class="lede">Share writing anonymously</p>
+  <p class="lede">Share your writing anonymously</p>
   <ol class="steps">
     <li><img class="step-icon" src="/step-add.png" alt=""><strong>Add a Google Doc</strong>
       <span>It shows up here under a pen name.</span></li>
