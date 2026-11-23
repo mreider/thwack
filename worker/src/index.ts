@@ -26,12 +26,12 @@ app.get('/', (c) => {
 <section class="landing">
   <img class="emblem" src="/icon.png?v=5" alt="">
   <h1>Thwack</h1>
-  <p class="lede">Share writing anonymously.</p>
+  <p class="lede">Share writing anonymously</p>
   <ol class="steps">
     <li><img class="step-icon" src="/step-add.png" alt=""><strong>Add a Google Doc</strong>
-      <span>It appears here under a pen name — never yours.</span></li>
+      <span>It shows up here under a pen name.</span></li>
     <li><img class="step-icon" src="/step-send.png" alt=""><strong>Send the link</strong>
-      <span>Anyone can read it. No account needed.</span></li>
+      <span>Anyone with the link can read it, no account needed.</span></li>
     <li><img class="step-icon" src="/step-notes.png" alt=""><strong>Trade private comments</strong>
       <span>They stay between you two, pinned to each draft.</span></li>
   </ol>
@@ -43,35 +43,35 @@ app.get('/', (c) => {
 app.get('/privacy', (c) => c.html(page('Privacy', c.get('user'), `
 <article class="legal">
   <h1>Privacy</h1>
-  <p>Thwack stores as little as possible. This page lists what it keeps and why.</p>
+  <p>This page explains what Thwack stores about you and why. The short answer is as little as possible.</p>
   <h2>Account data</h2>
-  <p>Signing in with Google stores your Google account id, name, and email address. These identify you when you return. They are never shown to anyone. Everyone else sees an assigned pen name and avatar.</p>
-  <p>Thwack also stores the pen name and avatar, rendered drafts of connected docs, comments and replies, and follow and block lists.</p>
+  <p>When you sign in with Google, Thwack keeps your Google account id, name, and email address so it can recognize you when you come back. Nobody else ever sees them. On the site you appear as an assigned pen name and avatar.</p>
+  <p>Thwack also stores that pen name and avatar, the rendered drafts of any docs you connect, the comments you write, and your follow and block lists.</p>
   <h2>Google Drive access</h2>
-  <p>Thwack uses the narrowest Drive permission (<code>drive.file</code>). It sees only documents picked in the file picker and cannot browse Drive. For a picked doc it checks the sharing setting and fetches the public export. Revoke access at any time at <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">myaccount.google.com/permissions</a>.</p>
+  <p>Thwack asks Google for the narrowest Drive permission, called <code>drive.file</code>. The permission only covers documents you pick in the file picker, so Thwack can't browse your Drive. For a picked doc it checks the sharing setting and fetches the public export. You can revoke the permission at any time at <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">myaccount.google.com/permissions</a>.</p>
   <h2>Public and private</h2>
-  <p>Portfolios and works are visible to anyone with the link. Comment conversations are private between the author and one reader. Real names and email addresses appear nowhere.</p>
+  <p>Portfolios and works are public, so anyone with the link can read them. Comment conversations are private between the author and one reader, and real names and email addresses don't appear anywhere.</p>
   <h2>Cookies</h2>
-  <p>One session cookie keeps you signed in. There are no ads, analytics, or trackers. Nothing is sold or shared.</p>
+  <p>Thwack sets one cookie, which keeps you signed in. There are no ads, no analytics, and no trackers, and nothing is sold or shared with anyone.</p>
   <h2>Caching</h2>
-  <p>Public pages are cached on Cloudflare's edge. Caches are cleared when content changes.</p>
+  <p>Public pages are cached on Cloudflare's edge, and the cache is cleared whenever the underlying content changes.</p>
   <h2>Removing things</h2>
-  <p>Remove a work at any time and its stored drafts stop being served. To delete an account and everything with it, write to <strong>hello@thwack.app</strong>.</p>
-  <p class="muted">Material changes to this page will be visible here.</p>
+  <p>You can remove a work at any time, which stops its stored drafts from being served. To delete your account and everything with it, write to <strong>hello@thwack.app</strong>.</p>
+  <p class="muted">Any meaningful change to this policy will appear on this page.</p>
   <p class="fineprint"><a href="/">Home</a> · <a href="/terms">Terms</a></p>
 </article>`)));
 
 app.get('/terms', (c) => c.html(page('Terms', c.get('user'), `
 <article class="legal">
   <h1>Terms</h1>
-  <p>Be decent, share only what you have the right to share, and don't unmask anyone. Details below.</p>
+  <p>These are the rules for using Thwack. They come down to three things: be decent, share only what you have the right to share, and don't unmask anyone.</p>
   <h2>Your writing</h2>
-  <p>Connecting a doc lets Thwack store and display rendered copies to readers. All rights stay with the writer. Remove a work at any time.</p>
+  <p>Connecting a doc gives Thwack permission to store rendered copies of it and show them to readers. All rights to the writing stay with you, and you can remove a work at any time.</p>
   <h2>Rules</h2>
-  <p>Only connect documents you have the right to share. No unlawful content, spam, or harassment. Comments are for honest, civil feedback on the writing. Writers go by pen names - don't try to reveal who is behind one. Blocks are permanent.</p>
+  <p>Only connect documents you have the right to share. Don't post unlawful content, spam, or harassment. Comments are for honest, civil feedback on the writing. Writers go by pen names, so don't try to reveal who is behind one. Blocks are permanent.</p>
   <p>Accounts or content that break these rules can be removed.</p>
   <h2>The service</h2>
-  <p>Thwack is free and provided as-is, with no warranty. It may change, pause, or shut down. Your writing lives in your own Google Docs either way. You must be at least 13 to use it.</p>
+  <p>Thwack is free and provided as-is, with no warranty. It may change or shut down someday, and if it does your writing is safe in your own Google Docs. You must be at least 13 to use it.</p>
   <p class="fineprint"><a href="/">Home</a> · <a href="/privacy">Privacy</a></p>
 </article>`)));
 
